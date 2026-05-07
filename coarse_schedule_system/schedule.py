@@ -50,8 +50,14 @@ class Schedule:
         return [
             item
             for item in self.entries.values()
-            if self.item.subject.upper() == subject.upper()
-            find_subject function to schedule.py
+            if item.subject.upper() == subject.upper()
+            ]
+    def find_subject_catalog(self, subject, catalog):
+        return[
+            item
+            for item in self.entries.values()
+            if item.subject.upper() ==subject.upper()
+            and item.catalog == catalog
             ]
                 
 

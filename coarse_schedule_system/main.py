@@ -39,3 +39,8 @@ def main():
         elif choice == "2":
             subject = input("Enter subject")
             results = schedule.find_subject(subject)
+        elif choice == "3":
+            subject = input("Enter subject")
+            catalog = input("Enter catalog #")
+            results = schedule.find_subject_catalog(subject, catalog)
+            print_results(results)
