@@ -1,4 +1,5 @@
 import csv
+from operator import itemgetter
 from schedule_item import Schedule_Item
 
 class Schedule:
@@ -44,6 +45,14 @@ class Schedule:
                     instructor = row["Instructor"]
                     )
                 self.add_enetries(item)
+
+    def find_subject(self, subject):
+        return [
+            item
+            for item in self.entries.values()
+            if self.item.subject.upper() == subject.upper()
+            find_subject function to schedule.py
+            ]
                 
 
 
