@@ -3,6 +3,7 @@ from schedule_item import Schedule_Item
 
 class Schedule:
     def __init__(self):
+        self.inputs = {}
 
     def print_h(self):
         print(
@@ -17,5 +18,11 @@ class Schedule:
             f"{'Instructor':<8}"
             
             )
+
+    def import_from_csv(self, filename):
+        with open(filename, encoding = "utf-8-sig", newline = "") as csvfile:
+
+
+
 
 #call get_key
