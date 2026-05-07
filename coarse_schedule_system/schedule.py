@@ -19,10 +19,29 @@ class Schedule:
             
             )
 
+    def add_entries(self, item):
+        self.entries[item.get_key()] = item
+
     def import_from_csv(self, filename):
         with open(filename, encoding = "utf-8-sig", newline = "") as csvfile:
+            reader = csv.DictReader(csvfile)
+            for row in reader:
+                
+                item = Schedule_Item(
+                    subject = row["Subject"],
+                    catalog = row["Catalog"],
+                    section = row["Section"],
+                    component = row["Compnonent"],
+                    session = row["Session"],
+                    units = row["Units"],
+                    totenrl = row["TotEnrl"],
+                    capenrl= ["CapEnrl"],
+                    instructor = row["Instructor"]
+                    )
+                self.add_enetries(item)
+                
 
 
 
 
-#call get_key
+
