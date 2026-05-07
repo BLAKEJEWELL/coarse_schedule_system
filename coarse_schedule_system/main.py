@@ -7,3 +7,15 @@ def main():
     schedule = Schedule()
     schedule.import_from_csv(filename)
     
+    while True:
+        print("\nCourse Schedule System Menu")
+        print("1. Display all")
+        print("Search by subject")
+        print("Search by subject/catalog")
+        print("Search by instuctor")
+        print("Quit")
+
+        choice = input("\nEnter choice:")
+
+        if choice == "1":
+            schedule.print()

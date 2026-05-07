@@ -19,6 +19,11 @@ class Schedule:
             
             )
 
+    def print_e(self):
+        self.print_h()
+        for item in self.entries.values():
+            item.print()
+
     def add_entries(self, item):
         self.entries[item.get_key()] = item
 
