@@ -27,20 +27,32 @@ def main():
     while True:
         print("\nCourse Schedule System Menu")
         print("1. Display all")
-        print("Search by subject")
-        print("Search by subject/catalog")
-        print("Search by instuctor")
-        print("Quit")
+        print("2. Search by subject")
+        print("3. Search by subject/catalog")
+        print("4. Search by instructor")
+        print("5. Quit")
 
         choice = input("\nEnter choice:")
 
         if choice == "1":
             schedule.print()
         elif choice == "2":
-            subject = input("Enter subject")
-            results = schedule.find_subject(subject)
-        elif choice == "3":
-            subject = input("Enter subject")
-            catalog = input("Enter catalog #")
-            results = schedule.find_subject_catalog(subject, catalog)
+            subject = input("Enter subject: ")
+            results = schedule.find_by_subject(subject)
             print_results(results)
+        elif choice == "3":
+            subject = input("Enter subject: ")
+            catalog = input("Enter catalog #: ")
+            results = schedule.find_by_subject_catalog(subject, catalog)
+            print_results(results)
+        elif choice == "4":
+            name = input("Enter instructor's last name:")
+            results = schedule.find_by_instructor_last_name(name)
+            print_results(results)
+        elif choice == "5":
+            print("\nEnding program.")
+            break
+        else:
+            print("\nInvalid selection. Enter 1-5.")
+
+main()

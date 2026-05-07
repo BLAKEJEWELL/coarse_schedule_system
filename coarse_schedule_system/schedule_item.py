@@ -8,23 +8,23 @@ class Schedule_Item:
     component: str
     session: str
     units: int
-    tot_enrl: int
-    cap_enrl: int
+    totenrl: int
+    capenrl: int
     instructor: str
 
-def print(self):
-    print(
-        f"{self.subject:<8}"
-        f"{self.catalog:<8}"
-        f"{self.section:<8}"
-        f"{self.componetn:<8}"
-        f"{self.session:<8}"
-        f"{self.units:<8}"
-        f"{self.totenrl:<8}"
-        f"{self.capenrl:<8}"
-        f"{self.instructor:<8}"
+    def print(self):
+        print(
+            f"{self.subject:<8}"
+            f"{self.catalog:<10}"
+            f"{self.section:<10}"
+            f"{self.component:<11}"
+            f"{self.session:<10}"
+            f"{self.units:<7}"
+            f"{self.totenrl:<10}"
+            f"{self.capenrl:<10}"
+            f"{self.instructor:<8}"
         
-        )
+            )
 
-def get_key(self):
-    return f"{self.subject}_{self.catalog}_{self.section}"
+    def get_key(self):
+        return f"{self.subject}_{self.catalog}_{self.section}"
